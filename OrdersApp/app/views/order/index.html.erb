@@ -1,0 +1,19 @@
+<p>
+  <strong>Orders</strong>
+</p>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Product</th>
+    <th>Amount</th>
+  </tr>
+ 
+  <% @lines.each do |line| %>
+    <tr>
+      <td><%= line.order_id %></td>  
+      <td><%= Product.where(id: line.product_id).first.name %></td>  
+      <td><%= line.amount %></td>    
+    </tr>
+  <% end %>
+</table>
