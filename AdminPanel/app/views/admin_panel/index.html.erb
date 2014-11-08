@@ -1,0 +1,10 @@
+<title>Admin Panel</title>
+<% @uniq_categories.keys.each do |category| %>
+		<%= category %>:
+		<ul>
+			<% Product.where(id: Category.where(name: category)).each do |product| %>
+				<li> <%= product.name %> </li>
+			<%end%>
+		</ul>
+</p>
+<% end %>
