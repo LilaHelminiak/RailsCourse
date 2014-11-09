@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+	<h1>Listing articles</h1>
+
+	<table>
+	  <tr>
+		<th>Title</th>
+		<th>Text</th>
+	  </tr>
+	 
+	  <% @articles.each do |article| %>
+		<tr>
+		  <td><%= article.title %></td>
+		  <td><%= article.text %></td>
+		  <td><%= link_to 'Show', article_path(article) %></td>
+		  <% if admin_signed_in? %>
+			<td><%= link_to 'Edit', edit_article_path(article) %></td>
+			<% end %>
+		</tr>
+	  <% end %>
+	</table>
+
+	<% if admin_signed_in? %>
+		<%= link_to 'New article', new_article_path %>
+	<% end %>
+<% else %>
+<p> Please sign in to continue. </p>
+<% end %>
