@@ -1,0 +1,26 @@
+%title Contacts list
+
+%table
+   %tr
+      %th First name
+      %th Last name
+      %th Phone
+      %th Mail
+      %th Pet
+   - @people.each do |p|
+      %tr
+         %td{:width => "130em"} 
+            = p.first_name
+         %td{:width => "160em"} 
+            = p.last_name
+         %td{:width => "100em"} 
+            = p.contact.phone
+         %td{:width => "100em"} 
+            = p.contact.mail
+         %td{:width => "160em"} 
+            = p.pet.name
+            (
+            = p.pet.animal
+            )
+            
+= link_to 'Add new contact', new_person_path
