@@ -1,0 +1,30 @@
+%title Contacts list
+
+%table
+   %tr
+      %th First name
+      %th Last name
+      %th Phone
+      %th Mail
+      %th Pet
+   - @people.each do |p|
+      %tr
+         %td{:width => "130em", :align=> "center"} 
+            = p.first_name
+         %td{:width => "160em", :align=> "center"} 
+            = p.last_name
+         %td{:width => "100em", :align=> "center"} 
+            = p.contact.phone
+         %td{:width => "100em", :align=> "center"} 
+            = p.contact.mail
+         %td{:width => "160em", :align=> "center"} 
+            = p.pet.name
+            (
+            = p.pet.animal
+            )
+         %td 
+            = link_to 'Show', person_path(p)
+         %td 
+            = link_to 'Edit', edit_person_path(p)
+            
+= link_to 'Add new contact', new_person_path

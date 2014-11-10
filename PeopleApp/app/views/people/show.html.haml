@@ -1,0 +1,21 @@
+%title Contact details
+%p
+   %strong Contact details:
+   = @person.first_name 
+   = @person.last_name
+
+%p
+   You can contact this person by
+   mail:
+   = @person.contact.mail
+   or phone:
+   = @person.contact.phone
+
+%p
+   This person has a
+   = @person.pet.animal
+   called
+   = @person.pet.name
+
+%p
+   = link_to 'Back to Contacts list', people_path
