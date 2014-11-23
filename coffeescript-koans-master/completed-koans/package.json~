@@ -1,0 +1,11 @@
+{
+  "name": "completed-koans",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "AboutShould.coffee"
+  },
+  "author": "",
+  "license": "ISC"
+}
