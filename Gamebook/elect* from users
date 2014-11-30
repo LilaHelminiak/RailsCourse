@@ -1,0 +1,19 @@
+             List of relations
+ Schema |       Name        | Type  | Owner 
+--------+-------------------+-------+-------
+ public | articles          | table | lila
+ public | attribute_sets    | table | lila
+ public | categories        | table | lila
+ public | characters        | table | lila
+ public | contacts          | table | lila
+ public | orders            | table | lila
+ public | people            | table | lila
+ public | pets              | table | lila
+ public | posts             | table | lila
+ public | product_lines     | table | lila
+ public | products          | table | lila
+ public | schema_migrations | table | lila
+ public | users             | table | lila
+ public | widgets           | table | lila
+(14 rows)
+

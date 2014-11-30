@@ -1,0 +1,20 @@
+<strong>
+Your character details:
+</strong>
+
+<p>
+Name: <%= @character.name %>
+<p>
+
+<p>
+Gender: 
+<% if @character.gender == 'k' %>
+female
+<% else %>
+male
+<% end %>
+<p>
+
+<p>
+Age: <%= @character.age %>
+<p>
