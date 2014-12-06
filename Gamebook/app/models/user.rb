@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one :character, dependent: :destroy, autosave: true, inverse_of: :user
   accepts_nested_attributes_for :character
-  self.primary_key = :email
+  #self.primary_key = :email
 end

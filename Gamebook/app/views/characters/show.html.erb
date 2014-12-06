@@ -1,6 +1,9 @@
+<% if (current_user.user_id.to_s == params[:id]) %>
+<p>
 <strong>
 Your character details:
 </strong>
+</p>
 
 <p>
 Name: <%= @character.name %>
@@ -18,3 +21,8 @@ male
 <p>
 Age: <%= @character.age %>
 <p>
+<% else %>
+<p>
+You have no access to this page
+</p>
+<%end%>

@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :update, :edit]
-  #before_filter	:authenticate_user!
   def new
     if admin_signed_in?
       @article = Article.new

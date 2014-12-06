@@ -30,7 +30,10 @@
     
     <div class="field">
         <%= ff.label :gender %><br />
-        <%= ff.text_field :gender %>
+        <%= radio_button_tag(:gender, "female") %>
+        <%= label_tag(:gender_type, "Female") %>
+        <%= radio_button_tag(:gender, "male") %>
+        <%= label_tag(:gender_type, "Male") %>
     </div>
     
     <div class="field">
