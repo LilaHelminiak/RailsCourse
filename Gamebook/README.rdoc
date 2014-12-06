@@ -1,28 +1,23 @@
-== README
+Gamebook README file:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test user: test@test.com
+Password: test1234
 
-Things you may want to cover:
+Admin user: admin@test.com
+Password: admin1234
 
-* Ruby version
+Changes from the last update:
 
-* System dependencies
+1. Added character model that belongs to the user. 
+- When the user is signing up then (s)he can add information about his character that (s)he's gonna play with.
+- When user is logged in then (s)he has possibility to check character details on 'View your character' page
+- Access to other character pages are disabled
 
-* Configuration
+2. Added coffescript to preview changes of edited article
+- When admin edits an existing article then (s)he can preview the changes, e.g. all '[ ]' will be changed to a radio button.
+ Notes:
+ - coffee script does not work on heroku, I'm investigating it. The script can be found in app/assets/javascript/articles.js.coffee
+ - I'm thinking of adding new model, answers.
+   Article has_many answers and each answer will lead to another article. 
+   That seems to be better approach than keeping an article with all answers and links in simple article_text.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
