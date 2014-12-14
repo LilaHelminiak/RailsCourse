@@ -1,6 +1,23 @@
 <%= javascript_include_tag :defaults, 'parse' %>
 <h1>New Article</h1>
 
+ <strong>Tips:</strong>
+ <p>
+ <ul>
+ <li> If you want to add an answer to the story, add in the end of your note following statement: <br/>
+ {<i>your_answer</i>;<i>article_index</i>}<br/>
+ e.g. {Sit on the floor;3} will produce <br/>
+ <input type="radio"/>Sit on the floor <br/>
+ and clicking this radiobutton will redirect the user to the article no. 3 <br/>
+ <li> If you want to use character's name in the note, use <i>[name]</i> tag, e.g <br/>
+ If character's name is John then this part: <br/>
+ She was asking for [name] <br/>
+ will produce: <br/>
+ She was asking for John
+ <li> You can click Preview button to see how your answers will look like (the [name] tag will not be changed in the Preview mode)
+ </ul>
+ </p>
+
 <%= form_for :article, url: articles_path do |f| %>
   <p>
     <%= f.label :title %><br>
@@ -11,6 +28,12 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
+  
+  <p>
+    <%= button_tag "Preview", :type => 'button', :onclick => "preview()"%>
+  </p>
+  <div id="preview">
+  </div>
  
   <p>
     <%= f.submit %>

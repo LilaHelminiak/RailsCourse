@@ -2,10 +2,13 @@
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= simple_format(@article.text) %>
-</p>
+<div id ="story">
+  <%if user_signed_in? %>
+    <%= simple_format(@article.text.gsub(/\[name\]/, Character.find(current_user.user_id).name), {}, sanitize:false) %>
+  <% else %>
+    <p><i>Please note that no user is logged in (only the admin), thus [name] tag reamains as [name]</i></p>
+	<%= simple_format(@article.text, {}, sanitize:false) %>
+  <%end%>
+</div>
 
 <%= link_to 'Back', articles_path %>
