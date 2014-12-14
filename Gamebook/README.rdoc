@@ -20,4 +20,9 @@ Changes from the last update:
  - I'm thinking of adding new model, answers.
    Article has_many answers and each answer will lead to another article. 
    That seems to be better approach than keeping an article with all answers and links in simple article_text.
+   
+   
+UPDATE 2014-12-14
+The project is done, log in as admin to add new notes or log in as an user to read and nagigate trough the story.
+Coffe script is still not working, so the Preview button does not perform any action :(
 
