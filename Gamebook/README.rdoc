@@ -6,6 +6,16 @@ Password: test1234
 Admin user: admin@test.com
 Password: admin1234
 
+UPDATE 2014-12-21
+Finally precompiled the assets and changed the Gem file. Now the coffee script is woking and the preview button is working too.
+ 
+   
+UPDATE 2014-12-14
+The project is done, log in as admin to add new notes or log in as an user to read and navigate trough the story.
+Coffe script is still not working, so the Preview button does not perform any action :(
+
+
+UPDATE 2014-12-07
 Changes from the last update:
 
 1. Added character model that belongs to the user. 
@@ -20,9 +30,4 @@ Changes from the last update:
  - I'm thinking of adding new model, answers.
    Article has_many answers and each answer will lead to another article. 
    That seems to be better approach than keeping an article with all answers and links in simple article_text.
-   
-   
-UPDATE 2014-12-14
-The project is done, log in as admin to add new notes or log in as an user to read and nagigate trough the story.
-Coffe script is still not working, so the Preview button does not perform any action :(
 
