@@ -9,7 +9,7 @@ class NoteControllerTest < ActionController::TestCase
   
   test "should create note" do
     assert_difference('Note.count') do
-      Note.create(title:"Some titlee")
+      Note.create(title: DateTime.now)
     end
   end
   
