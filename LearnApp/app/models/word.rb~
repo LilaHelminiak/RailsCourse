@@ -1,0 +1,8 @@
+class Word
+  attr_accessor :description, :entry, :category
+    def initialize description, entry, category
+      @description = description
+      @author = entry
+      @category = category
+    end
+end

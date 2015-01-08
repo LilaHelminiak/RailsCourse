@@ -1,0 +1,4 @@
+require_relative '../app/models/word'
+require_relative '../app/controllers/word_controller'
+
+require 'yaml'
