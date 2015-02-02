@@ -3,7 +3,9 @@ class CreateWords < ActiveRecord::Migration
     create_table :words do |t|
       t.string :description
       t.string :entry
-      t.string :category
+      t.string :category      
+      t.references :user
+
       t.timestamps
     end
   end

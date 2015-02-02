@@ -1,1 +1,32 @@
+<style>
+#theTable, #theRows {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#theRows {
+    padding: 5px;
+}
+</style>
+
 <strong>My words</strong>
+<br/><br/>
+<%= link_to 'Add new word', new_word_path %>
+<br/>
+<table id="theTable">
+  <tr id = "theRows">
+    <th id = "theRows">Word</th>
+    <th id = "theRows">Definition</th>		
+    <th id = "theRows">Category</th>
+    <th id = "theRows">Action</th>
+  </tr>
+  <% @words.each do |w| %>
+  
+  <tr id = "theRows">
+    <td id = "theRows"><%=w.entry%></td>
+    <td id = "theRows"><%=w.description%></td>		
+    <td id = "theRows"><%=w.category%></td>
+    <td id = "theRows">Edit | Delete</td>
+  </tr>
+  <% end %>
+  
+</table>
