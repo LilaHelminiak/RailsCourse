@@ -2,6 +2,9 @@
 
 LearnApp, RoR course final project
 
+Update 2015-02-03
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Admin credentials: admin@test.com
+User credentials: test@test.com
+
+Quiz & Score tabs are not fully working yet, the rest should be fine.

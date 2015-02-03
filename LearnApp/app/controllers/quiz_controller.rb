@@ -7,7 +7,7 @@ class QuizController < ApplicationController
   end
   
   def new
-	if params[:myCategory]
+	if (params[:myCategory]=='true')
 		wordArray= Word.where(:user_id => current_user.id).where(:category => params[:category])
 	else
 		adminIds = User.where(:admin => true).select(:id)

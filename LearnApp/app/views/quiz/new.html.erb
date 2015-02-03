@@ -1,9 +1,9 @@
 <h2> New Quiz </h2>
-
+<h3>Category: <%=params[:category]%></h3>
 <table>
 <% @words.each do |w| %>
 <tr>
-	<td><%= w.description %></td>
+	<td width=40%><%= w.description %></td>
 	<td><input type="text"></td>
 </tr>
 <% end %>
