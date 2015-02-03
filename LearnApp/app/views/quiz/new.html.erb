@@ -1,0 +1,11 @@
+<h2> New Quiz </h2>
+
+<table>
+<% @words.each do |w| %>
+<tr>
+	<td><%= w.description %></td>
+	<td><input type="text"></td>
+</tr>
+<% end %>
+</table>
+<input type="submit"/>

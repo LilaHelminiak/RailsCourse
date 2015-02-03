@@ -1,11 +1,17 @@
 class WordsController < ApplicationController
-
+  before_filter :authenticate_user!
+  
   def index
     @words = Word.where('user_id = ?', current_user.id)
   end
 
   def show
-    @word = Word.find(params[:id])
+    word = Word.find(params[:id])
+    if word.user_id == current_user.id || User.find(word.user_id).admin?
+		@word = word
+	else 
+		@word = nil
+	end
   end
   
   def new
@@ -18,6 +24,10 @@ class WordsController < ApplicationController
  
 	@word.save
 	redirect_to @word
+  end
+  
+  def test
+
   end
   
   private

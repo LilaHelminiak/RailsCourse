@@ -10,12 +10,16 @@
 	
 <table>
 <tr>
+	
 <% if user_signed_in? %>
 	<td>  Logged in as <%= current_user.email %> | </td>
 	<td> <%= link_to "Home", controller: "/main", action: "home" %> | </td>
-	<td> <%= link_to "My words", controller: "/words", action: "index" %> | </td>
+	<td> <%= link_to "Manage words", controller: "/words", action: "index" %> | </td>
 	<td> Scores | </td>
-	<td> <%= link_to "My profile", controller: "profiles", action: "index" %> | </td>
+	<% if !current_user.admin? %>
+	<td> <%= link_to "Quiz", controller: "/quiz", action: "index" %> | </td>
+	<% end %>
+	<td> <%= link_to "My profile", controller: "/profiles", action: "index" %> | </td>
 	<td> <%= link_to "About LearnApp", controller: "/main", action: "about" %> | </td>
 	<td>  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </td>	
 <% else %>

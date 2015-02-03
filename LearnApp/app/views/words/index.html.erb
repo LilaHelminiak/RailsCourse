@@ -1,10 +1,14 @@
 <style>
-#theTable, #theRows {
+#theTable, th, .theRow {
     border: 1px solid black;
     border-collapse: collapse;
 }
-#theRows {
+th, .theRow{
     padding: 5px;
+    text-align: center;
+}
+#definition {
+	width: 50%;
 }
 </style>
 
@@ -14,18 +18,18 @@
 <br/>
 <table id="theTable">
   <tr id = "theRows">
-    <th id = "theRows">Word</th>
-    <th id = "theRows">Definition</th>		
-    <th id = "theRows">Category</th>
-    <th id = "theRows">Action</th>
+    <th>Word</th>
+    <th>Definition</th>		
+    <th>Category</th>
+    <th>Action</th>
   </tr>
   <% @words.each do |w| %>
   
   <tr id = "theRows">
-    <td id = "theRows"><%=w.entry%></td>
-    <td id = "theRows"><%=w.description%></td>		
-    <td id = "theRows"><%=w.category%></td>
-    <td id = "theRows">Edit | Delete</td>
+    <td class="theRow"><%=w.entry%></td>
+    <td class="theRow" id = "definition"><%=w.description%></td>		
+    <td class="theRow"><%=w.category%></td>
+    <td class="theRow">Edit | Delete</td>
   </tr>
   <% end %>
   

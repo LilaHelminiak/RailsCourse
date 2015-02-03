@@ -1,0 +1,15 @@
+<h2> Quiz </h2>
+
+<p>
+Please select the category:
+</p>
+<ul> My categories:
+<% @myCategories.each do |c| %>
+	<li> <%= link_to c.category , new_quiz_path(:category => c.category, :myCategory => true) %> </li>
+<% end %>
+</ul>
+<ul> General categories:
+<% @generalCategories.each do |c| %>
+	<li> <%= link_to c.category , new_quiz_path(:category => c.category, :myCategory => false) %> </li>
+<% end %>
+</ul>

@@ -1,3 +1,8 @@
+<% if @word.nil? %>
+<p>
+	Sorry, but you are not allowed to see this word.
+</p>
+<% else %>
 <p>
   <strong><%= @word.entry %></strong> (<%= @word.category %>) 
 </p>
@@ -5,3 +10,6 @@
 <p>
   <%= @word.description %>
 </p>
+<% end %>
+<%= link_to 'Back to Words', words_path %>
+
