@@ -13,6 +13,7 @@ class WordsController < ApplicationController
 		@word = nil
 	end
   end
+
   
   def new
     @word = Word.new
@@ -25,10 +26,7 @@ class WordsController < ApplicationController
 	@word.save
 	redirect_to @word
   end
-  
-  def test
 
-  end
   
   private
   def word_params

@@ -1,11 +1,13 @@
 <h2> New Quiz </h2>
 <h3>Category: <%=params[:category]%></h3>
 <table>
-<% @words.each do |w| %>
+<% @words.each_with_index do |w, index| %>
 <tr>
 	<td width=40%><%= w.description %></td>
-	<td><input type="text"></td>
+	<td><input type="text" id="userAnswer<%=index%>"></td>
+	<td><label hidden id="answer<%=index%>" style=""> <%= w.entry %></td>
 </tr>
 <% end %>
 </table>
-<input type="submit"/>
+<%= button_tag "Validate", :type => 'button', :onclick => "check(#{@words.count})", :id => "validate_button" %>
+<%= link_to "Validate", :controller => :words, :action => :index, method: :post, remote: true %>
