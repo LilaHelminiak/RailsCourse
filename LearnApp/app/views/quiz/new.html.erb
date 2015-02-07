@@ -1,13 +1,20 @@
 <h2> New Quiz </h2>
 <h3>Category: <%=params[:category]%></h3>
-<table>
-<% @words.each_with_index do |w, index| %>
-<tr>
-	<td width=40%><%= w.description %></td>
-	<td><input type="text" id="userAnswer<%=index%>"></td>
-	<td><label hidden id="answer<%=index%>" style=""> <%= w.entry %></td>
-</tr>
-<% end %>
-</table>
-<%= button_tag "Validate", :type => 'button', :onclick => "check(#{@words.count})", :id => "validate_button" %>
-<%= link_to "Validate", :controller => :words, :action => :index, method: :post, remote: true %>
+	<table>
+	<tr>
+		<%= form_for @word do |w| %>
+		<td width=40%><%= @word.description %></td>
+		<td><input type="text" id="userAnswer" autocomplete="off"></td>
+		<td><label hidden id="answer"> <%= @word.entry %></td>
+		<td><%= w.hidden_field :score %></td>
+	</tr>
+	<tr>
+		<td>
+			<%= button_tag "Validate", :type => 'button', :onclick => "check()", :id => "validate_button" %>
+			<%= w.button  :Next , name: "quizmode", value: "true", :disabled => true, :id => "next_button"%> 
+		</td>  
+	<tr/>
+	<tr>
+		<% end %>
+	</tr>
+	</table>

@@ -29,7 +29,7 @@ th, .theRow{
     <td class="theRow"><%=w.entry%></td>
     <td class="theRow" id = "definition"><%=w.description%></td>		
     <td class="theRow"><%=w.category%></td>
-    <td class="theRow">Edit | Delete</td>
+    <td class="theRow"><%= link_to 'Edit', edit_word_path(w) %> | <%= link_to 'Delete', word_path(w), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
   
